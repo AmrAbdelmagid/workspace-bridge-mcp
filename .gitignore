@@ -1,0 +1,4 @@
+node_modules/
+.workspace-bridge.json
+*.log
+.DS_Store

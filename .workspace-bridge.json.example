@@ -1,0 +1,12 @@
+{
+  "projects": [
+    {
+      "name": "project_b",
+      "path": "/absolute/path/to/project_b"
+    },
+    {
+      "name": "shared_lib",
+      "path": "../shared_lib"
+    }
+  ]
+}
