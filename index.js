@@ -24,7 +24,7 @@ const { projects, currentProjectName } = await loadProjects(currentProjectPath);
 // --------------------------------------------
 const mcpServer = new McpServer({
   name: "workspace-bridge-mcp",
-  version: "3.0.0",
+  version: "0.1.0",
 });
 
 // Register all tools
@@ -39,7 +39,7 @@ async function main() {
   await mcpServer.connect(transport);
   
   // Log startup info (to stderr to not interfere with stdio protocol)
-  console.error(`🚀 workspace-bridge-mcp v3.0.0 started!`);
+  console.error(`🚀 workspace-bridge-mcp v0.1.0 started!`);
   console.error(`📂 Current project: ${currentProjectName} (${currentProjectPath})`);
   
   const linkedProjects = Object.entries(projects).filter(([name]) => name !== currentProjectName);
