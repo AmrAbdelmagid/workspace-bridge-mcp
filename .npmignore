@@ -1,0 +1,13 @@
+# Development files
+.git/
+.gitignore
+.DS_Store
+node_modules/
+
+# Test files
+test/
+*.test.js
+
+# Build artifacts
+*.log
+npm-debug.log*

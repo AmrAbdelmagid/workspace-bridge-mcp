@@ -1,5 +1,7 @@
 # Workspace Bridge MCP Server
 
+> **⚠️ Early Stage / Experimental** - This package is in active development (v0.1.0). APIs may change.
+
 A powerful project-aware MCP server that enables cross-project file access and git history exploration. Each project defines which other projects it needs to access via a simple config file!
 
 ## Features
@@ -23,14 +25,61 @@ A powerful project-aware MCP server that enables cross-project file access and g
 ## Installation
 
 ### Prerequisites
-- Node.js (v16 or higher)
+- Node.js (v18 or higher)
 - Git (for git history features)
 
-### Setup
+### Quick Start
+
+Install globally via npm:
+
+```bash
+npm install -g workspace-bridge-mcp
+```
+
+Or use with npx (no installation required):
+
+```bash
+npx workspace-bridge-mcp
+```
+
+### Configure Your MCP Client
+
+Add this server to your MCP client configuration file:
+
+**Option 1 (no installation required):**
+
+```json
+{
+  "mcpServers": {
+    "workspace-bridge": {
+      "command": "npx",
+      "args": ["-y", "workspace-bridge-mcp"]
+    }
+  }
+}
+```
+
+**Alternative (if globally installed):**
+
+```json
+{
+  "mcpServers": {
+    "workspace-bridge": {
+      "command": "workspace-bridge-mcp"
+    }
+  }
+}
+```
+
+**Restart your MCP client** to load the server.
+
+### Development Setup
+
+If you want to contribute or run from source:
 
 1. **Clone this repository:**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/AmrAbdelmagid/workspace-bridge-mcp.git
    cd workspace-bridge-mcp
    ```
 
@@ -39,23 +88,17 @@ A powerful project-aware MCP server that enables cross-project file access and g
    npm install
    ```
 
-3. **Configure your MCP client:**
-
-   Add this server to your MCP client configuration file. The location varies by client:
-   
+3. **Configure your MCP client to use local version:**
    ```json
    {
      "mcpServers": {
        "workspace-bridge": {
          "command": "node",
-         "args": ["/absolute/path/to/workspace-bridge-mcp/index.js"],
-         "env": {}
+         "args": ["/absolute/path/to/workspace-bridge-mcp/index.js"]
        }
      }
    }
    ```
-
-4. **Restart your MCP client** to load the server.
 
 ## Usage
 
